@@ -1,0 +1,9 @@
+.navbar-brand, .nav-link {
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+}
+
+.button-list {
+    margin-top: 4px;
+}
