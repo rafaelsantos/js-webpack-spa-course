@@ -1,0 +1,23 @@
+{
+  "name": "js-webpack-spa-course",
+  "version": "1.0.0",
+  "description": "SPA Application with JavaScript and Webpack",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rafaelsantos/js-webpack-spa-course.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rafaelsantos/js-webpack-spa-course/issues"
+  },
+  "homepage": "https://github.com/rafaelsantos/js-webpack-spa-course#readme",
+  "devDependencies": {
+    "webpack": "^5.3.0",
+    "webpack-cli": "^4.1.0"
+  }
+}
