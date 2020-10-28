@@ -59,3 +59,11 @@ const updateCustomer = (id, cpf, name) => {
     body: json
   })
 }
+
+export {
+  getCustomers,
+  saveCustomer,
+  deleteCustomer,
+  getCustomer,
+  updateCustomer
+}

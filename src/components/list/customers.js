@@ -1,3 +1,5 @@
+import { getCustomers, deleteCustomer } from '../../api/client'
+
 const removeCustomer = id => {
   if(confirm("Remove customer?")) {
     deleteCustomer(id)
