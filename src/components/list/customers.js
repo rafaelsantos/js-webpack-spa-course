@@ -1,4 +1,4 @@
-import { getCustomers, deleteCustomer } from '../../api/client'
+import { getCustomers, deleteCustomer } from '../../api/client.js'
 
 const removeCustomer = id => {
   if(confirm("Remove customer?")) {
