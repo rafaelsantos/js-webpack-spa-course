@@ -1,4 +1,5 @@
 import { getCustomers, deleteCustomer } from '../../api/client.js'
+import "../../assets/css/customers.css"
 
 const removeCustomer = id => {
   if(confirm("Remove customer?")) {
