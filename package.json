@@ -1,8 +1,8 @@
 {
   "name": "js-webpack-spa-course",
   "version": "1.0.0",
-  "description": "SPA Application with JavaScript and Webpack",
-  "main": "index.js",
+  "description": "SPA application developed with Java Script and Webpack",
+  "main": "webpack.config.js",
   "scripts": {
     "start": "webpack --config webpack.config.js"
   },
@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/rafaelsantos/js-webpack-spa-course#readme",
   "devDependencies": {
-    "webpack": "^5.3.0",
+    "webpack": "^5.3.2",
     "webpack-cli": "^4.1.0"
   }
 }
