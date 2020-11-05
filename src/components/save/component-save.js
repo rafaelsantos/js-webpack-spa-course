@@ -1,4 +1,4 @@
-const { default: sendEvent } = require("./save")
+import sendEvent from "../save/save";
 
 const form = document.createElement('form')
 const save = `
@@ -17,6 +17,13 @@ const save = `
 form.innerHTML = save
 
 const initSave = () => {
+  const container = document.querySelector('[data-container]')
+
   sendEvent(form)
+  container.innerHTML = ""
+  container.appendChild(form)
+
   return form
 }
+
+export default initSave

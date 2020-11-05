@@ -1,9 +1,7 @@
 import validateCPF from '../validation/validation'
 import { saveCustomer } from '../../api/client'
 
-const sendEvent = (frm) => {
-    const form = document.querySelector('[data-form]')
-
+const sendEvent = (form) => {
     form.addEventListener("submit", event => {
         //prevents the behavior of clearing form data when it is submitted
         event.preventDefault()

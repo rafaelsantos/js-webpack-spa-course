@@ -55,3 +55,5 @@ function validateCPF(cpf) {
         checkInvalidCPF(cpf)
     )
 }
+
+export default validateCPF
