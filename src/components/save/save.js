@@ -1,15 +1,22 @@
-const form = document.querySelector('[data-form]')
+import validateCPF from '../validation/validation'
+import { saveCustomer } from '../../api/client'
 
-form.addEventListener("submit", event => {
-    //prevents the behavior of clearing form data when it is submitted
-    event.preventDefault()
+const sendEvent = (frm) => {
+    const form = document.querySelector('[data-form]')
 
-    const nome = event.target.querySelector('[data-nome]')
-    const cpf = event.target.querySelector('[data-cpf]')
+    form.addEventListener("submit", event => {
+        //prevents the behavior of clearing form data when it is submitted
+        event.preventDefault()
+    
+        const nome = event.target.querySelector('[data-nome]')
+        const cpf = event.target.querySelector('[data-cpf]')
+    
+        if(validateCPF(cpf.value)) {
+            saveCustomer(nome.value, cpf.value)
+        } else {
+            alert('CPF is not valid!')
+        }
+    })
+}
 
-    if(validateCPF(cpf.value)) {
-        saveCustomer(nome.value, cpf.value)
-    } else {
-        alert('CPF is not valid!')
-    }
-})
+export default sendEvent
