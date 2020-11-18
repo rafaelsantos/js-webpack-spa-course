@@ -7,7 +7,20 @@ const removeCustomer = id => {
     document.location.reload()
   }
 }
-  
+
+const createDeleteButton = (id) => {
+  const button = document.createElement('button')
+  button.classList.add('btn', 'btn-danger')
+  button.innerHTML = 'Remove'
+  button.style.marginLeft = '10px'
+  button.style.marginTop = '1px'
+
+  button.addEventListener('click', ()=> {
+    removeCustomer(id)
+  })
+
+  return button
+}
 const createTableBody = ( table ) => {
   const tableBody = document.createElement('tbody')
 
@@ -17,13 +30,11 @@ const createTableBody = ( table ) => {
     const tableContent = `
         <td>${cpf}</td>
         <td>${nome}</td>
-        <button type="button" class="btn btn-danger button-list" onclick="removeCustomer(${id})">Remove</button>
-        <a href="components/update/edit.html?id=${id}">
-          <button type="button" class="btn btn-info button-list">Edit</button>
-        </a>
+        <button type="button" class="btn btn-info button-list" onclick="navigation('/edit?id=${id}'); return false;">Edit</button>
     `;
   
     line.innerHTML = tableContent;
+    line.appendChild(createDeleteButton(id))
   
     return line;
   };
@@ -44,9 +55,6 @@ const initTable = () => {
       <th scope="col">CPF</th>
       <th scope="col">Name</th>
       <th scope="col"></th>
-      <th scope="col">
-        <a class="btn btn-primary" onclick="navigation('/save'); return false;">New customer</a>
-      </th>
     </tr>
   </thead>
   `

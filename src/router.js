@@ -1,9 +1,11 @@
 import initSave from "./components/save/component-save";
-import initTable from "./components/list/customers"
+import initTable from "./components/list/customers";
+import initEdit from "./components/update/form-edit"
 
 const routes = {
     "/": initTable,
-    "/save": initSave
+    "/save": initSave,
+    "/edit": initEdit
 }
 
 const rootDiv = document.querySelector('[data-container]')

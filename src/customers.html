@@ -17,7 +17,7 @@
     <title>PetShop!</title>
   </head>
   <nav class="navbar navbar-light bg-light">
-    <a class="navbar-brand" href="./customers.html">
+    <a class="navbar-brand" href="#" onclick="navigation('/'); return false;">
       <img
         src="./assets/img/dog.png"
         width="50"
@@ -28,13 +28,13 @@
     </a>
     <ul class="nav justify-content-end">
       <li class="nav-item">
-        <a class="nav-link active" href="./customers.html">Customers</a>
+        <a class="nav-link active" onclick="navigation('/'); return false;" href="#">Customers</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Pets</a>
+        <a class="nav-link" onclick="navigation('/'); return false;" href="#">Pets</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="./components/save/save.html">New Customer</a>
+        <a class="nav-link" onclick="navigation('/save'); return false;" href="#">New Customer</a>
       </li>
     </ul>
   </nav>
