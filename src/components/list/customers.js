@@ -1,6 +1,5 @@
 import { getCustomers, deleteCustomer } from '../../api/client.js'
 import "../../assets/css/customers.css"
-import initSave from '../save/component-save.js'
 
 const removeCustomer = id => {
   if(confirm("Remove customer?")) {
@@ -8,8 +7,11 @@ const removeCustomer = id => {
     document.location.reload()
   }
 }
+  
+const createTableBody = ( table ) => {
+  const tableBody = document.createElement('tbody')
 
-const listCustomers = (cpf, nome, id) => {
+  const listCustomers = (cpf, nome, id) => {
     const line = document.createElement("tr");
   
     const tableContent = `
@@ -25,39 +27,38 @@ const listCustomers = (cpf, nome, id) => {
   
     return line;
   };
+
+  getCustomers().then(customers => {
+    customers.forEach(customer => {
+      tableBody.appendChild(listCustomers(customer.cpf, customer.nome, customer.id));
+    });
+  });
   
-const content = `
+  table.appendChild(tableBody)
+}
+
+const initTable = () => {
+  const header = `
   <thead class="thead-dark">
     <tr>
       <th scope="col">CPF</th>
       <th scope="col">Name</th>
       <th scope="col"></th>
       <th scope="col">
-        <a class="btn btn-primary">New customer</a>
+        <a class="btn btn-primary" onclick="navigation('/save'); return false;">New customer</a>
       </th>
     </tr>
   </thead>
-`
-const container = document.querySelector('[data-container]')
-const table = document.createElement("table")
+  `
+  const table = document.createElement("table")
 
-table.innerHTML = content
-table.classList.add("table")
-container.appendChild(table)
+  table.innerHTML = header
+  table.classList.add("table")
 
-const newCustomer = document.querySelector('.btn')
-const tableBody = document.createElement('tbody')
-console.log(newCustomer)
+  createTableBody(table)
 
-newCustomer.addEventListener('click', () => {
-  initSave()
-})
+  return table
+}
 
-getCustomers().then(customers => {
-  customers.forEach(customer => {
-    tableBody.appendChild(listCustomers(customer.cpf, customer.nome, customer.id));
-  });
-});
-
-table.appendChild(tableBody)
+export default initTable
 
